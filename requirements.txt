@@ -1,0 +1,11 @@
+flask==1.1.1
+gunicorn==20.0.2
+cbor==1
+pymongo==3.9
+
+py-cid==0.3
+py-multibase==1.0.1
+py-multicodec==0.2.1
+py-multihash==0.2.3
+
+pytz
