@@ -1,17 +1,27 @@
 There are three main database categories:
 
 # store terminology
-contentstore:   original content/dw saved by `cbor-mhash`,
-                note if object is content or deadweight,
-                post_id this content is associated with,
-                optional CID pointing to `cborstore` with fully resolved cbor object (with media CIDs also resolved)
+dwclstore:      _id:        `cbor` multihash of `"payload"`,
+                payload:    bare `object`,
+                (mh):       *optional* `multihash` denoting Processed `tumult.dwcl`.
 
-poststore:      original post object,
-                optionally (when downloaded) has content + hash pointing to `contentstore`,
-                optionally has dw + hash pointing to `contentstore`,
-                optionally has trail + hashes pointing to `contentstore`
+urlstore:       _id:    URL in `str`,
+                cid:    IPFS object's Content ID.
 
-mediastore:     url to CID mapping
+poststore:      _id:        `post_id`,
+                `...`:      `...`,
+                (trail):    *optional* deadweight+cl **oldest-first** `[dwcl-mh,]` array,
+                (mtrail):   *optional* `post_id` -> `dwcl-mh` mapping,
+                (dw):       *optional* deadweight `[dwcl-mh,]` array,
+                (cl):       *optional* `dwcl-mh`.
+                
+postpointer:    _id:    `post_id`,
+                mh:     `multihash` in `cborstore`,
+                ghost:  `bool`.
+
+cborstore:      _id:    `multihash` of `"cbor"`,
+                cbor:   `cbor` bytes of object,
+                type:   `str` denoting type in `tumult.*` fashion.
 
 # Object classification
 
