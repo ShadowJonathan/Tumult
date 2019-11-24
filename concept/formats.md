@@ -10,7 +10,7 @@ All IPLD objects are immutable by design, but these objects sometimes represent 
 
 "Mutability" hereby refers to the fact that any object in these categories can be *replaced* by a more "complete", "latest" or "correct" version.
 
-Thus a "Mutable" object can either be replaced by an Immutable version, or eventually become obsolete by completeness of data in other objects.
+Thus a "Mutable" object can either be replaced by an Immutable or another Mutable version, or eventually become obsolete by completeness of data in other objects.
 
 #### Processed vs Derivative
 
