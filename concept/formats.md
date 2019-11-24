@@ -183,7 +183,7 @@ A trail object, noting down the post's reblog history, **oldest-first**.
 >
 > Processed
 
-DWCL, standing for DeadWeight Content Layout, an amalgamation of those three types of data into one object.
+DWCL stands for DeadWeight Content Layout, an amalgamation of those three pieces of data into one object type.
 
 DeadWeight is a result of Tumblr trying to fix their site when they switched over to NPF (Neue Post Format, replacing HTML with Blocks), when reblogs have already been made, and their original blogs have been deleted/switched to a different URL.
 
