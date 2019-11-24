@@ -23,30 +23,15 @@ cborstore:      _id:    `multihash` of `"cbor"`,
                 cbor:   `cbor` bytes of object,
                 type:   `str` denoting type in `tumult.*` fashion.
 
-# Object classification
-
-Media: Immutable
-
-Content/DW: Immutable/Dependent Immutable
-
-Trail: Dependent Immutable
-
-Post: Dependent Immutable
-
-Tree: Updating Immutable
-
-## Terminology
-Immutable: Immutable upon creation
-
-Dependent Immutable: Needs other object's Immutable CID to be created
-
-Updating Immutable: Only dependant on indexing other's CIDs and update them
-
 # Content sweep
+
+[//]: # (WIP)
 
 1. select content from `contentstore`
 
 # Compile procedure
+
+[//]: # (WIP)
 
 1. select post from `poststore`
 
