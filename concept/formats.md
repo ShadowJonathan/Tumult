@@ -230,6 +230,8 @@ Instead, any media object is correctly referenced in `tumult.media.*` objects, w
 >
 > Derivative
 
+An object holding information about a `tumult.post.ghost`'s potential content, but where no consensus exists between all reblogs.
+
 ```json5
 {
   "type": "tumult.conflict",
