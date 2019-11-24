@@ -196,7 +196,7 @@ In any post (or deadweight), two values are key to the actual post content: `"co
 A DWCL object either holds the content+layout of a post, or the content+layout+metadata of a deadweight object.
 
 Note: Any media block does not (and should not) use the IPLD syntax with the CID that they use to refer to their corresponding IPFS object.
-This is to prevent a pin of the top `tumult.tree` object (that indexes all `tumult.post`+`tumult.post.ghost` objects) to resolve the enormous amount of media that is recursively referenced in every post, and start storing it's giga/terabytes of data.
+This is to prevent a pin of the top `tumult.tree` object (that indexes all `tumult.post`+`tumult.post.ghost` objects) to resolve the enormous amount of media that is recursively referenced in every post, and start storing their giga/terabytes of data.
 
 Instead, any media object is correctly referenced in `tumult.media.*` objects, which are in turn chained together, and finally referenced in the `tumult.megapin` object.
 
