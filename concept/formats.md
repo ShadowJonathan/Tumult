@@ -187,7 +187,9 @@ DWCL stands for DeadWeight Content Layout, an amalgamation of those three pieces
 
 DeadWeight is a result of Tumblr trying to fix their site when they switched over to NPF (Neue Post Format, replacing HTML with Blocks), when reblogs have already been made, and their original blogs have been deleted/switched to a different URL.
 
-Tumblr inserts "broken trail objects" in the reblog trail whenever such a situation has occured. These objects are referenced as "dead weight" because that is their function, they do not refer to any specific post, but instead give an echo of one. These objects are irrecoverable to their original status, but also cannot be omitted from the reblog chain.
+Tumblr inserts "broken trail objects" in the reblog trail whenever such a situation has occured. These objects are referenced as "dead weight" because that is their function within this data; They are not useful only for it to be extra data to carry aorund.
+
+They do not refer to any specific post, but instead give an echo of one. These objects are irrecoverable to their original status, but also *cannot* be omitted from the reblog chain.
 
 In any post (or deadweight), two values are key to the actual post content: `"content"` and `"layout"`.
 
