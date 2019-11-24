@@ -20,7 +20,7 @@ Thus a "Mutable" object can either be replaced by an Immutable or another Mutabl
 
 "Processed" refers that the object has an "original", but has only been edited (CIDs replacing URLs, CIDs added for additional data, structure cleaned up, ultra-mutable keys (like note count on a Tumblr post) removed) to make it acceptable for IPLD format.
 
-"Derivative" refers that the object is "virtual" or "pseudo" in the sense that it's there for indexing and pointing to other objects (like a `tumult.tree` object).
+"Derivative" refers that the object is "virtual" or "pseudo" in the sense that it's there for indexing or pointing to other objects (like a `tumult.tree` or `tumult.trail` object).
 
 All objects have a key `"type"`, this key denotes the type of the object, **this key must always be present on all objects**.
 
