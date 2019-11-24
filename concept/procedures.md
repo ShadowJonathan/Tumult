@@ -1,6 +1,5 @@
-There are three main database categories:
 
-# store terminology
+### store terminology
 dwclstore:      _id:        `cbor` multihash of `"payload"`,
                 payload:    bare `object`,
                 (mh):       *optional* `multihash` denoting Processed `tumult.dwcl`.
@@ -23,13 +22,45 @@ cborstore:      _id:    `multihash` of `"cbor"`,
                 cbor:   `cbor` bytes of object,
                 type:   `str` denoting type in `tumult.*` fashion.
 
-# Content sweep
+### Long-running DWCL processor
 
-[//]: # (WIP)
+Meant to run in a background job, periodically sweeping across all DWCL objects, downloading media when referenced.
 
-1. select content from `contentstore`
+```python
+for dwcl in dwclstore:
 
-# Compile procedure
+    # Ensure we don't process unnecessary stuff.
+    if dwcl.mh is not None:
+
+        # Make a copy for the local workset
+        copy = dwcl.payload.copy()
+
+        # Extra processing if content has media with it
+        if "media" in copy.content[image:video:audio]:
+            
+            # Extra processing if media is coming from image, trim bloat.
+            if content is 'image':
+                trim_image_media_array(copy)
+
+            # Download Media, add to urlstore, and store CID alongside URL
+            media = dwcl.content.media
+            CID = ipfs.store(media.url.download())
+            urlstore.add(_id=media.url, cid=CID)
+            media.cid = CID
+
+        copy['type'] = "tumult.dwcl"
+
+        cbor_bytes = cbor.dumps(copy)
+        mh = multihash.make(cbor_bytes)
+
+        # Store resolved DWCL into cborstore
+        cborstore.insert(_id=mh, cbor=cbor_bytes, type="tumult.dwcl")
+
+        # Store multihash with original DWCL
+        dwclstore[dwcl._id].mh = mh
+```
+
+### Compile procedure
 
 [//]: # (WIP)
 
