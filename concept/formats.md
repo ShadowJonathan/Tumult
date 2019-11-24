@@ -12,6 +12,10 @@ All IPLD objects are immutable by design, but these objects sometimes represent 
 
 Thus a "Mutable" object can either be replaced by an Immutable or another Mutable version, or eventually become obsolete by completeness of data in other objects.
 
+"Immutable" is thus *truly* Immutable, and is expected to stay in the archive in the same place.
+
+*(Note: in some specific cases, Immutable objects **can** be replaced by another version of itself, "Immutable" means a "complete" object, but that object can still become updated. (like a Tumblr post can have tags added, or its content edited))*
+
 #### Processed vs Derivative
 
 "Processed" refers that the object has an "original", but has only been edited (CIDs replacing URLs, CIDs added for additional data, structure cleaned up, ultra-mutable keys (like note count on a Tumblr post) removed) to make it acceptable for IPLD format.
