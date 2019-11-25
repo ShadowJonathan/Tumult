@@ -1,11 +1,6 @@
 
 ### store terminology
-dwclstore:      _id:        `cbor` multihash of `"payload"`,
-                payload:    bare `object`,
-                (mh):       *optional* `multihash` denoting Processed `tumult.dwcl`.
-
-urlstore:       _id:    URL in `str`,
-                cid:    IPFS object's Content ID.
+#### Unprocessed
 
 poststore:      _id:        `post_id`,
                 `...`:      `...`,
@@ -13,6 +8,15 @@ poststore:      _id:        `post_id`,
                 (mtrail):   *optional* `post_id` -> `dwcl-mh` mapping,
                 (dw):       *optional* deadweight `[dwcl-mh,]` array,
                 (cl):       *optional* `dwcl-mh`.
+                
+dwclstore:      _id:        `cbor` multihash of `"payload"`,
+                payload:    bare `object`,
+                (mh):       *optional* `multihash` denoting Processed `tumult.dwcl`.
+
+#### Processed
+
+urlstore:       _id:    URL in `str`,
+                cid:    IPFS object's Content ID.
 
 pointerstore:   _id:    `post_id`,
                 mh:     `multihash` in `cborstore`,
