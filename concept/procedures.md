@@ -13,8 +13,8 @@ poststore:      _id:        `post_id`,
                 (mtrail):   *optional* `post_id` -> `dwcl-mh` mapping,
                 (dw):       *optional* deadweight `[dwcl-mh,]` array,
                 (cl):       *optional* `dwcl-mh`.
-                
-postpointer:    _id:    `post_id`,
+
+pointerstore:   _id:    `post_id`,
                 mh:     `multihash` in `cborstore`,
                 ghost:  `bool`.
 
