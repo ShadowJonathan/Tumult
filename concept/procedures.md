@@ -1,5 +1,5 @@
 
-### store terminology
+### `store` terminology
 #### Unprocessed
 
 poststore:      _id:        `post_id`,
